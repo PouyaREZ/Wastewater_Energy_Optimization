@@ -6,6 +6,6 @@
 #SBATCH -p cee
 #SBATCH -c 10
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=pouyar@stanford.edu
+#SBATCH --mail-user=<Your_Email>
 module load python/3.6.1
-python3 -m scoop --host $HOSTNAME -vv -n 10 SF_CaseStudy_Ch1_Pouya.py
+python3 -m scoop --host $HOSTNAME -vv -n 10 Main.py
