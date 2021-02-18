@@ -1,6 +1,8 @@
 # Wastewater_Energy_Optimization
 Author: Pouya Rezazadeh Kalehbasti
+
 Based on paper by Best et al. (2015)*
+
 Readme based on https://github.com/othneildrew/Best-README-Template
 
 
