@@ -1,0 +1,9 @@
+deap==1.3.1
+numpy==1.18.5
+bokeh==2.1.1
+pandas==1.0.5
+matplotlib==3.2.2
+scoop==0.7.1.1
+pyDOE==0.3.8
+pygmo==2.16.1
+scikit_learn==0.24.1
