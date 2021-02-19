@@ -74,10 +74,10 @@ Follow the steps below to get a local copy of the project and be able to run it.
    ```sh
    git clone https://github.com/PouyaREZ/Wastewater_Energy_Optimization.git
    ```
-1.1. Install these required packages on your Python.
-	```sh
-	pip install -r requirements.txt
-	```
+   1.1. Install these required packages on your Python.
+	   ```sh
+	   pip install -r requirements.txt
+	   ```
    
 2. If you want to rerun the optimization and regenerate the optimization solutions, follow steps 3 to 4 below. Otherwise, go to step 5.
    
