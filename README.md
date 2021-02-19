@@ -3,7 +3,6 @@ Author: Pouya Rezazadeh Kalehbasti
 
 Based on paper by Best et al. (2015)*
 
-Readme based on https://github.com/othneildrew/Best-README-Template
 
 
 
@@ -37,16 +36,15 @@ Readme based on https://github.com/othneildrew/Best-README-Template
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
+	<li><a href="#references">References</a></li>
   </ol>
 </details>
 
@@ -54,16 +52,12 @@ Readme based on https://github.com/othneildrew/Best-README-Template
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This GitHub repository contains the files required for reproducing the results published in paper XXXXXXXXXX.
 
 
 
 ### Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Python](https://www.python.org/)
 
 
@@ -73,13 +67,6 @@ This section should list any major frameworks that you built your project using.
 
 Follow the steps below to get a local copy of the project and be able to run it.
 
-### Prerequisites
-
-Install these required packages on your Python.
-* pip
-  ```sh
-  pip install -r requirements.txt
-  ```
 
 ### Installation
 
@@ -87,7 +74,11 @@ Install these required packages on your Python.
    ```sh
    git clone https://github.com/PouyaREZ/Wastewater_Energy_Optimization.git
    ```
-
+1.1. Install these required packages on your Python.
+	```sh
+	pip install -r requirements.txt
+	```
+   
 2. If you want to rerun the optimization and regenerate the optimization solutions, follow steps 3 to 4 below. Otherwise, go to step 5.
    
 3. Solve the optimization problem with genetic algorithm by running the following command in `./Main` directory.
@@ -111,13 +102,77 @@ and for the integrated scenario into `./Plotters/RQ1_WO_CWWTP_ModConsts_Feb17/`.
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
+To expand this project, you can do the following:
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+
+Some of the things you can update or modify in the project:
+1. Modify or add a chiller model:
+Either in `./Main/AbsorptionChillers.py` or `./Main/ElectricChillers.py`, you need to both modify 
+the `Computer` function and add a new function named as your new chiller model, similar to the
+existing models.
+
+You also need to update lines 89 and 93 of `./Main/Main.py` with the new count of chiller models.
+[E.g., increase the number on line 93 by 1 if you add one chiller]
+
+
+2. Modify or add a CHP engine model:
+
+In `./Main/CHPEngines.py`, you need to both modify the `Computer` function and add a new function
+named as your new CHP model, similar to the existing models.
+
+You also need to update `./Main/CHP_Info.csv` file with the new/modified CHP engine information.
+
+You also need to update lines 88 and 93 of `./Main/Main.py` with the new count of chiller models.
+[E.g., increase the number on line 93 by 1 if you add one CHP engine]
+
+2. Modify or add a wastewater treatment model:
+
+Add a new function or modify the existing functions in `./Main/WWT.py`.
+
+
+3. Modify or add a building archetype:
+
+You need to add/update the 8760-hour demand of cooling, heating, and electricity for the new/updated
+archetype to these three files, respectively: `./Main/Hourly_Cooling.csv`, `./Main/Hourly_Heating.csv`,
+and `./Main/Hourly_Electricity.csv`. The building type corresponding to each column in these files follows
+the order of building types listed in `./Main/Building_Info.csv`.
+
+You also need to add/update the average daily demand, monthly coefficients, and hourly coefficients of
+wastewater treatment demand for the new building archetype to `./Main/Profiles.csv`. The building type
+corresponding to each column in these files follows the order of building types listed in
+`./Main/Building_Info.csv`.
+
+You also need to update `./Main/Building_Info.csv` with the new/modified building archetype information.
+
+You also need to update line 93 of `./Main/Main.py` with the new count of building types, e.g., increase
+the number on line 93 by 1 if you add one building type.
+
+
+3.1 Be careful: your model might consider a building-level chiller to
+satisfy the cooling demand of the building. In this case, you need to subtract the cooling demand
+satisfied by the electric chiller from the electric load and add it instead to the cooling load.
+Same goes for the heating demand of the building.
+
+
+4. Change the geographic location of running the model:
+
+Modify `./Main/Site_Info.csv` according to the new location. Then update `./Main/Hourly_Weather.csv` with
+the meteorological information of the new location.
+
+
+5. Change the eletricity tariff:
+
+Modify `./Main/Grid_Parameters.csv` with the new electricity tariff. The headings of the columns in the 
+existing csv file mentions references used for obtaining the listed data; you can use them for easier
+data gathering.
+
+
+
 
 
 
@@ -131,25 +186,17 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Pouya Rezazadeh Kalehbasti - [@your_twitter](https://twitter.com/your_username) - rezazadeh.pouya@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/PouyaREZ/Wastewater_Energy_Optimization](https://github.com/PouyaREZ/Wastewater_Energy_Optimization)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
+
+Readme based on https://github.com/othneildrew/Best-README-Template
+
 
 
 
@@ -157,27 +204,21 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/PouyaREZ/Wastewater_Energy_Optimization.svg?style=for-the-badge
 [contributors-url]: https://github.com/PouyaREZ/Wastewater_Energy_Optimization/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/PouyaREZ/Wastewater_Energy_Optimization.svg?style=for-the-badge
 [forks-url]: https://github.com/PouyaREZ/Wastewater_Energy_Optimization/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/PouyaREZ/Wastewater_Energy_Optimization.svg?style=for-the-badge
 [stars-url]: https://github.com/PouyaREZ/Wastewater_Energy_Optimization/stargazers
 
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/PouyaREZ/Wastewater_Energy_Optimization.svg?style=for-the-badge
 [license-url]: https://github.com/PouyaREZ/Wastewater_Energy_Optimization/blob/main/LICENSE
 
 
 
 
 
-
-
-
-
-
-
-
-
+<!-- References -->
+## References
 
 * Best, Robert E., Forest Flager, and Michael D. Lepech. "Modeling and optimization of building mix and energy supply technology for urban districts." Applied energy 159 (2015): 161-177.

@@ -4,7 +4,7 @@ Created on Wed Aug  8 07:42:51 2018
 
 Module for reading in the water consumption profiles and creating the 8760 hours
 
-Input: Profiles.xlsx
+Input: Profiles.csv
         1st line: avg monthly use (gal/d)
         2nd line: monthly variations
         Bottom-most lines: 24 hr variations
