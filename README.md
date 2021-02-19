@@ -1,5 +1,5 @@
 # Wastewater_Energy_Optimization
-Author: Pouya Rezazadeh Kalehbasti
+Author: Pouya Rezazadeh Kalehbasti (PhD Candidate in CEE | CS @ Stanford University)
 
 Based on paper by Best et al. (2015)*
 
@@ -7,13 +7,6 @@ Based on paper by Best et al. (2015)*
 
 
 <!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -39,7 +32,6 @@ Based on paper by Best et al. (2015)*
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -75,7 +67,7 @@ Follow the steps below to get a local copy of the project and be able to run it.
    git clone https://github.com/PouyaREZ/Wastewater_Energy_Optimization.git
    ```
    1.1. Install these required packages on your Python.
-	   ```sh
+	   ```
 	   pip install -r requirements.txt
 	   ```
    
@@ -186,7 +178,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Pouya Rezazadeh Kalehbasti - [@your_twitter](https://twitter.com/your_username) - rezazadeh.pouya@gmail.com
+Pouya Rezazadeh Kalehbasti - rezazadeh.pouya@gmail.com
 
 Project Link: [https://github.com/PouyaREZ/Wastewater_Energy_Optimization](https://github.com/PouyaREZ/Wastewater_Energy_Optimization)
 
