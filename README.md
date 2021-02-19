@@ -94,15 +94,7 @@ and for the integrated scenario into `./Plotters/RQ1_WO_CWWTP_ModConsts_Feb17/`.
 <!-- CONTRIBUTING -->
 ## Contributing
 
-To expand this project, you can do the following:
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-Some of the things you can update or modify in the project:
+Fork the project if you want to expand/update it. Here are some of the things you can update or modify in the project:
 1. Modify or add a chiller model:
 Either in `./Main/AbsorptionChillers.py` or `./Main/ElectricChillers.py`, you need to both modify 
 the `Computer` function and add a new function named as your new chiller model, similar to the
