@@ -56,7 +56,7 @@ def DF_Filter(filename):
     
     
     print('Count over the max GFA:')
-    condition3 = inputDF[38]>=647497*5*error_tol
+    condition3 = inputDF[38]>=647497*5*error_tol # 5 = max FAR
     print(inputDF[condition3][38].count())
     
     

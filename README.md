@@ -1,9 +1,6 @@
 # Wastewater_Energy_Optimization
 Author: Pouya Rezazadeh Kalehbasti (PhD Candidate in CEE | CS @ Stanford University)
 
-Based on paper by Best et al. (2015)*
-
-
 
 
 <!-- PROJECT SHIELDS -->
